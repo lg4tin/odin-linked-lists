@@ -5,6 +5,20 @@ class LinkedList {
   constructor(head = null) {
     this.head = head;
   }
+
+  append(value) {
+    const newNode = new Node(value);
+    this.nextNode = newNode;
+    
+    
+    let lastNode = this.nextNode;
+    if (lastNode) {
+      while (lastNode.nextNode) {
+        alert('hi');
+      }
+    }lastNode.nextNode = newNode;
+  }
+  
 }
 
 class Node {
@@ -14,11 +28,16 @@ class Node {
   }
 }
 
-const nodeOne = new Node('hi')
+const list = new LinkedList('head');
 
-console.log(nodeOne)
+list.append(4)
 
-const list = {
+console.log(list)
+
+
+
+
+const lists = {
   head: {
       value: 6,
       next: {

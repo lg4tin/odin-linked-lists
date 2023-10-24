@@ -68,6 +68,12 @@ class LinkedList {
       return 'Index does not exist';
     }
   }
+
+  pop() {
+    let lastIndex = this.size() - 2;
+
+    return this.at(lastIndex).nextNode = null;
+  }
 }
 
 class Node {

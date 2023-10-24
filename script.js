@@ -27,8 +27,8 @@ class LinkedList {
   prepend(value = 'head') {
     let newNode = new Node(value);
 
-    newNode.nextNode = this.value;
-    this.value = newNode;
+    newNode.nextNode = this.head;
+    this.head = newNode;
     
   }
 }
@@ -45,6 +45,7 @@ let list = new LinkedList(0);
 list.append(1)
 list.append(2)
 list.append(3)
+list.prepend(-1)
 
 
 

@@ -1,18 +1,20 @@
 /*eslint-disable*/
 
 class LinkedList {
-  constructor(head = null) {
-    this.head = head;
-    this.nextNode = null;
+  constructor(value) {
+    this.head = {
+      value: value,
+      nextNode: null
+    }
   }
 
   append(value) {
     let newNode = new Node(value);
 
-    if (this.nextNode === null) {
-      this.nextNode = newNode;
+    if (this.head.nextNode === null) {
+      this.head.nextNode = newNode;
     } else {
-      let lastNode = this.nextNode;
+      let lastNode = this.head.nextNode;
       
         while (lastNode.nextNode) {
           lastNode = lastNode.nextNode;
@@ -20,6 +22,14 @@ class LinkedList {
       
       lastNode.nextNode = newNode;
     }    
+  }
+
+  prepend(value = 'head') {
+    let newNode = new Node(value);
+
+    newNode.nextNode = this.value;
+    this.value = newNode;
+    
   }
 }
 
@@ -30,11 +40,12 @@ class Node {
   }
 }
 
-const list = new LinkedList('head');
+let list = new LinkedList(0);
 
 list.append(1)
 list.append(2)
 list.append(3)
+
 
 
 console.log(list)

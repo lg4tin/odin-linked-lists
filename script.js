@@ -74,6 +74,20 @@ class LinkedList {
 
     return this.at(lastIndex).nextNode = null;
   }
+
+  contains(value, obj = this) {
+    
+    for (let key in obj) {
+      if (typeof obj[key] === 'object') {
+        return this.contains(value, obj[key]);
+      }
+
+      if (obj[key] === value) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 class Node {

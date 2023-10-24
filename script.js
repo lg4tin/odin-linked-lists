@@ -46,6 +46,16 @@ class LinkedList {
   head() {
     return this.head;
   }
+
+  tail() {
+    let tail = this.head.nextNode;
+
+    while (tail.nextNode) {
+      tail = tail.nextNode;
+    }
+
+    return tail;
+  }
 }
 
 class Node {
@@ -58,12 +68,8 @@ class Node {
 let list = new LinkedList(0);
 
 list.append(1)
+list.append(1)
+list.append(1)
 list.append(2)
-list.append(3)
-list.prepend(-1)
-list.prepend(-2)
-list.append(4)
-
-
 
 console.log(list)

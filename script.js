@@ -56,6 +56,18 @@ class LinkedList {
 
     return tail;
   }
+
+  at(index) {
+    if (index <= this.size()) {
+      let indexNode = this.head;
+      for (let i = 0; i < index; i++) {
+        indexNode = indexNode.nextNode;
+      }
+      return indexNode;
+    } else {
+      return 'Index does not exist';
+    }
+  }
 }
 
 class Node {
@@ -68,8 +80,8 @@ class Node {
 let list = new LinkedList(0);
 
 list.append(1)
-list.append(1)
-list.append(1)
 list.append(2)
+list.append(3)
+list.append(4)
 
 console.log(list)

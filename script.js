@@ -16,20 +16,35 @@ class LinkedList {
     } else {
       let lastNode = this.head.nextNode;
       
-        while (lastNode.nextNode) {
-          lastNode = lastNode.nextNode;
-        }
+      while (lastNode.nextNode) {
+        lastNode = lastNode.nextNode;
+      }
       
       lastNode.nextNode = newNode;
     }    
   }
 
-  prepend(value = 'head') {
+  prepend(value) {
     let newNode = new Node(value);
 
     newNode.nextNode = this.head;
     this.head = newNode;
     
+  }
+
+  size() {
+    let count = 0;
+    let node = this.head;
+
+    while(node) {
+      count++;
+      node = node.nextNode;
+    }
+    return count;
+  }
+
+  head() {
+    return this.head;
   }
 }
 
@@ -46,6 +61,8 @@ list.append(1)
 list.append(2)
 list.append(3)
 list.prepend(-1)
+list.prepend(-2)
+list.append(4)
 
 
 

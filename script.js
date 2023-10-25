@@ -65,7 +65,7 @@ class LinkedList {
       }
       return indexNode;
     } else {
-      return 'Index does not exist';
+      return false;
     }
   }
 
@@ -88,6 +88,19 @@ class LinkedList {
     }
     return false;
   }
+
+  find(value) {
+    let size = this.size();
+    let index = null;
+    
+
+    for (let i = 0; i < size; i++) {
+      if (this.at(i).value == value) {
+        index = i;
+      } 
+    }
+    return index;
+  }
 }
 
 class Node {
@@ -97,11 +110,11 @@ class Node {
   }
 }
 
-let list = new LinkedList(0);
+let list = new LinkedList('a');
 
-list.append(1)
-list.append(2)
-list.append(3)
-list.append(4)
+list.append('b')
+list.append('c')
+list.append('d')
+list.append('e')
 
 console.log(list)

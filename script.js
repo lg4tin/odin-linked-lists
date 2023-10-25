@@ -101,6 +101,20 @@ class LinkedList {
     }
     return index;
   }
+
+  toString() {
+    let size = this.size();
+    let string = '';
+
+    for (let i = 0; i < size; i++) {
+      if (i === size - 1) {
+        string += `( ${this.at(i).value} -> null)`
+      } else {
+        string += `( ${this.at(i).value} -> )`
+      }
+    }
+    return string;
+  }
 }
 
 class Node {
